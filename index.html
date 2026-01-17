@@ -1,1 +1,114 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>كابوس | قصص مرعبة</title>
 
+<style>
+*{box-sizing:border-box;}
+body{margin:0;font-family:"Tahoma",sans-serif;background:radial-gradient(circle at top,#111 0%,#000 60%);color:#eee;}
+header{padding:50px 20px;text-align:center;background:linear-gradient(to bottom,#000,#0b0b0b);border-bottom:2px solid #7a0000;}
+header h1{font-size:48px;color:#b30000;margin:0;letter-spacing:3px;text-shadow:0 0 15px #600;}
+header p{margin-top:15px;color:#aaa;font-size:16px;}
+.container{max-width:1000px;margin:40px auto;padding:15px;}
+.story{background:linear-gradient(to left,#141414,#0f0f0f);margin-bottom:30px;padding:25px;border-radius:12px;border-right:6px solid #8b0000;box-shadow:0 0 25px rgba(0,0,0,0.7);transition:transform 0.3s,box-shadow 0.3s;}
+.story:hover{transform:scale(1.02);box-shadow:0 0 40px rgba(139,0,0,0.4);}
+.story h2{margin:0;color:#ff4d4d;font-size:22px;}
+.story p{margin-top:12px;color:#ccc;line-height:1.9;}
+.story a{display:inline-block;margin-top:15px;color:#ff8080;text-decoration:none;font-weight:bold;}
+.story a:hover{color:#fff;text-shadow:0 0 10px #900;}
+.warning{background:#0f0f0f;border:1px solid #300;padding:20px;border-radius:10px;margin-bottom:40px;text-align:center;color:#ff6b6b;font-size:14px;}
+footer{text-align:center;padding:25px;color:#666;font-size:14px;border-top:1px solid #222;}
+.counter{color:#ccc;margin-top:10px;font-size:14px;}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>كابوس</h1>
+  <p>قصص مرعبة… تقرأها؟ تتحمّل العواقب؟</p>
+</header>
+
+<div class="container">
+
+  <div class="warning">
+    ⚠️ تحذير: بعض القصص قد تترك أثرًا نفسيًا… المتابعة على مسؤوليتك الشخصية.
+  </div>
+
+  <div class="story">
+    <h2>👁️ قصة: البيت الذي لا ينام</h2>
+    <p>
+      انتقلنا إلى بيت قديم في أطراف المدينة…
+      منذ الليلة الأولى بدأنا نسمع خطوات فوق السقف،
+      رغم أن الطابق العلوي مهجور منذ عشرات السنين.
+    </p>
+    <a href="story1.html">اقرأ القصة كاملة →</a>
+    <div class="counter">عدد مشاهدات القصة: <span id="story1Count">...</span></div>
+  </div>
+
+  <div class="story">
+    <h2>🕯️ قصة: الطرق عند الثالثة</h2>
+    <p>
+      في كل ليلة تمامًا عند الساعة الثالثة،
+      يُسمع طرق خفيف على الباب…
+      وعندما تفتحه، لا تجد أحدًا.
+    </p>
+    <a href="story2.html">اقرأ القصة كاملة →</a>
+    <div class="counter">عدد مشاهدات القصة: <span id="story2Count">...</span></div>
+  </div>
+
+  <div class="story">
+    <h2>🩸 قصة: الرسالة الأخيرة</h2>
+    <p>
+      وصلتني رسالة من رقم مجهول تقول:
+      "لا تفتح الباب مهما سمعت اسمك".
+      بعد دقائق… سُمع صوتي يناديني.
+    </p>
+    <a href="story3.html">اقرأ القصة كاملة →</a>
+    <div class="counter">عدد مشاهدات القصة: <span id="story3Count">...</span></div>
+  </div>
+
+  <div class="counter" style="text-align:center; margin-top:30px;">
+    👁️ عدد مشاهدات الموقع: <span id="siteCounter">...</span>
+  </div>
+
+</div>
+
+<footer>
+© كابوس | المالك: معتصم زكارنه
+</footer>
+
+<script>
+// عداد الموقع
+fetch('https://api.countapi.xyz/hit/kavoos-site/visits')
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById('siteCounter').innerText = data.value;
+  });
+
+// عداد قصة 1
+fetch('https://api.countapi.xyz/hit/kavoos-story1/views')
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById('story1Count').innerText = data.value;
+  });
+
+// عداد قصة 2
+fetch('https://api.countapi.xyz/hit/kavoos-story2/views')
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById('story2Count').innerText = data.value;
+  });
+
+// عداد قصة 3
+fetch('https://api.countapi.xyz/hit/kavoos-story3/views')
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById('story3Count').innerText = data.value;
+  });
+</script>
+
+</body>
+  </html>
